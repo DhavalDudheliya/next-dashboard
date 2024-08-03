@@ -10,9 +10,9 @@ import { fetchRevenue } from "@/app/lib/data";
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChart() {
-  const chartHeight = 350;
-  const revenue = await fetchRevenue();
+export const RevenueChart = async () => {
+  const chartHeight: number = 350;
+  const revenue: Revenue[] = await fetchRevenue();
 
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
@@ -58,4 +58,4 @@ export default async function RevenueChart() {
       </div>
     </div>
   );
-}
+};
